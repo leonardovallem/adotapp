@@ -5,6 +5,7 @@ LER ESSE "README" NO MODO DE EDIÇÃO PARA VISUALIZAR MELHOR
 
 Tela inicial do aplicativo está feita (index.html)
   *(pendente) Mudanças na responsividade dessa página --- Não preocupar com isso agora
+  *(pendente) Alterar os textos: Inserir textos a respeito do Adotapp
 
 Simulação do login e cadastro estão completas (login.html e cadastro.html)
   -> Ao clicar Fazer login ou o cadastro o usuário é levado para o painel inicial (inicio.html)
