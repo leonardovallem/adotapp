@@ -6,7 +6,7 @@
   "display": "fullscreen",
   "orientation": "portrait",
   "Scope": "/",
-  "start_url": "http://127.0.0.1:5500/index.html",
+  "start_url": "https://adotapp.herokuapp.com/",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
