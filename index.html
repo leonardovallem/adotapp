@@ -113,5 +113,14 @@
     <script type="text/javascript" src="node_modules/mdbootstrap/js/popper.min.js"></script>
     <script type="text/javascript" src="node_modules/mdbootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="node_modules/mdbootstrap/js/mdb.min.js"></script>
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+          // Use the window load event to keep the page load performant
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js');
+          });
+        }
+    </script>
 </body>
 </html>
