@@ -28,11 +28,25 @@ self.addEventListener('install', e => {
         `/login.html`,
         `/cadastro.html`,
         `/home.html`,
+        `/Imagens/stock-pais-filhos.jpg`,
+        `/Imagens/logoBrancoSemFundo.png`,
+        `/Imagens/logoSemFundo.png`,
+        `/Imagens/apple-touch-icon.png`,
+        `/node_modules/mdbootstrap/css/bootstrap.min.css`,
+        `/node_modules/mdbootstrap/css/mdb.min.css`,
+        `/node_modules/mdbootstrap/css/style.css`,
         `/estilos/style.css`,
+        `/estilos/sb-admin-2.css`,
+        `/estilos/sb-admin-2.min.css`,
+        `/estilos/styleInicial.css`,
         `/estilos/styles.css`,
         `/scripts/jquery-3.5.0.min.js`,
         `/scripts/script.js`,
-        `/scripts/scripts.js`
+        `/scripts/scripts.js`,
+        `/scripts/demo/chart-area-demo.js`,
+        `/scripts/demo/chart-bar-demo.js`,
+        `/scripts/demo/chart-pie-demo.js`,
+        `/recursos/chart.js/Chart.bundle.js`
       ])
           .then(() => self.skipWaiting());
     })
