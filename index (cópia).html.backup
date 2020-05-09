@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#56ae44">
+    <title>Adotapp</title>
+    <link rel="icon" href="Imagens/logoSemFundo.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <link rel="stylesheet" href="node_modules/mdbootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/mdbootstrap/css/mdb.min.css">
+    <link rel="stylesheet" href="node_modules/mdbootstrap/css/style.css">
+    <link rel="stylesheet" href="estilos/styleInicial.css">
+    <link rel="manifest" href="manifest.json">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall"></script>
+    <script src="scripts/inicio.js"></script>
+</head>
+<body class="container-fluid">
+
+    <header>
+
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar purple accent-5">
+        <a class="navbar-brand" href="#"><strong>Adotapp</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Sobre</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contato</a>
+            </li>
+            </ul>
+        </div>
+        </nav>
+
+        <div class="view intro-2">
+        <div class="full-bg-img">
+            <div class="mask rgba-black-light flex-center">
+            <div class="container text-center white-text">
+                <div class="white-text text-center wow fadeInUp">
+                <h2>This Navbar is fixed</h2>
+                <h5>It will always stay visible on the top, even when you scroll down</h5>
+                <br>
+                <p>Full page intro with background image will be always displayed in full screen mode, regardless
+                    of device </p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    
+    </header>
+        
+    
+        <!--Main Layout-->
+    <main class="container-fluid py-5 mainInicio">
+    
+        <div class="container-fluid textoPaginaPrincipal ">
+        <div class="row">
+            <div class="col-12 col-lg-7 m-0 p-0">
+                <!-- Card -->
+                <div class="card card-image w-100 h-100 cardPaginaInicial"
+                style="background-image: url(Imagens/paisFilhos.jpg);">
+
+                <!-- Content -->
+                <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4 h-100">
+                <div>
+                    <h5 class="pink-text"><i class="fas fa-child"></i> Adotapp</h5>
+                    <h3 class="card-title pt-2"><strong>Sobre nós</strong></h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam, voluptatem,
+                    optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos.
+                    Odit sed qui, dolorum!.</p>
+                    <br>
+                </div>
+                </div>
+
+                </div>
+                <!-- Card -->
+            </div>
+
+            <div class="container-fluid col-12 col-lg-5 p-0 m-0">
+
+                <div class="jumbotron h-100">
+                    <h2 class="display-4">Comece agora</h2>
+                    <p class="lead">Entre agora no Adotapp e realize seu sonho meu camarada! Ou entre pelo seu Smartphone e leve o Adotapp aonde você vai!</p>
+                    <hr class="my-4">
+                    <p>Clique em <strong>Entrar</strong> para ingressar no Adotapp</p>
+                    <a class="btn btn-purple accent-5 btn-lg" href="login.html" role="button">Entrar</a>
+                </div>
+    
+            </div>
+        </div>
+        </div>
+    
+    </main>
+
+    <footer class="page-footer font-small purple accent-5 fixed-bottom w-100">
+        
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2020 Copyright: Adotapp
+        </div>
+        <!-- Copyright -->
+    
+    </footer>
+
+    <script type="text/javascript" src="node_modules/mdbootstrap/js/jquery.min.js"></script>
+    <script type="text/javascript" src="node_modules/mdbootstrap/js/popper.min.js"></script>
+    <script type="text/javascript" src="node_modules/mdbootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="node_modules/mdbootstrap/js/mdb.min.js"></script>
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+          // Use the window load event to keep the page load performant
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js');
+          });
+        }
+    </script>
+</body>
+</html>
