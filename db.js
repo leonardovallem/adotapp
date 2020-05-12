@@ -1,10 +1,10 @@
-function adicionaUsuario(e) {
+function adicionaUsuario() { // tela de cadastro -> checa se o usuario já existe, se não: adiciona
     var usuarios = [];
     usuarios = JSON.parse(localStorage.getItem("usuarios") || "[]");
 
-    let emailUsuario = document.getElementById("inputEmail").value;
+    let emailCadastrado = document.getElementById("inputEmailCadastro").value;
 
-    if(usuarios.length == 0){
+    if(usuarios.length == 0){ //se não tiver nenhum usuario no localStorage
         const usuario = {
             nome: this.inputNome.value,
             sobrenome: this.inputSobrenome.value,
@@ -17,65 +17,82 @@ function adicionaUsuario(e) {
         usuarios.push(usuario);
         localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
-    }else{
+        document.getElementById('formCadastro').action = "home.html";
+        
+    }else{                  //se já  tiver usuarios no localStorage
+        //console.log("Já existe no minimo um usuario.");
 
+        let  jaFoiCadastrado=false;  //iniciando uma variavel booleana para testar se o email fornecido ja foi cadastrado
         for(i=0 ; i < usuarios.length ; i++){
-            if(usuarios[0].email.indexOf(emailUsuario) == -1){
-                const usuario = {
-                    nome: this.inputNome.value,
-                    sobrenome: this.inputSobrenome.value,
-                    email: this.inputEmailCadastro.value,
-                    senha: this.inputSenhaCadastro.value
-                }
-        
-                usuarios = JSON.parse(localStorage.getItem("usuarios") || "[]");
-        
-                usuarios.push(usuario);
-                localStorage.setItem("usuarios", JSON.stringify(usuarios));
-            }
-            else{
-                alert("Esse email já foi cadastrado.");
-                return false;
+            if(usuarios[i].email == emailCadastrado){
+                alert("Esse email ja foi cadastrado.");
+                jaFoiCadastrado = true; // se der verdadeiro ele automaticamente para esse script
+                document.getElementById('formCadastro').action = "login.html";
+                break;
             }
         }
-    }        
+        if(!jaFoiCadastrado){ // se não tiver sido cadastrado ele cadastra no localStorage
+            const usuario = {
+                nome: this.inputNome.value,
+                sobrenome: this.inputSobrenome.value,
+                email: this.inputEmailCadastro.value,
+                senha: this.inputSenhaCadastro.value
+            }
+
+            usuarios = JSON.parse(localStorage.getItem("usuarios") || "[]");
+
+            usuarios.push(usuario);
+            localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+            document.getElementById('formCadastro').action = "home.html";            
+        }
+    }
 
 }
 
-function teste() {
+
+function checaUsuario() {    // tela de login -> checa se o usuario já existe, se não: erro
     var usuarios = [];
     usuarios = JSON.parse(localStorage.getItem("usuarios") || "[]");
 
-    const usuario = {
-        nome: this.inputNome.value,
-        sobrenome: this.inputSobrenome.value,
-        email: this.inputEmailCadastro.value,
-        senha: this.inputSenhaCadastro.value
+    var emailParaLogin = document.getElementById("inputEmail").value;
+
+
+    if(usuarios.length == 0){          // se não tiver nenhum usuario no localStorage não tem como ele ser cadastrado
+        alert("Email não cadastrado.");
+        document.getElementById('formLogin').action = "cadastro.html";
+        
+    }else{
+        var jaFoiCadastrado=false;  //iniciando uma variavel booleana para testar se o email fornecido ja foi cadastrado
+        for(i=0 ; i < usuarios.length ; i++){
+            if(usuarios[i].email == emailParaLogin){
+                var indexIgual = i;
+                jaFoiCadastrado = true; // se der verdadeiro ele automaticamente para esse script
+                document.getElementById('formLogin').action = "home.html";
+                break;
+            }
+        }
+        if(!jaFoiCadastrado){
+            alert("Email não cadastrado.");
+            document.getElementById('formLogin').action = "cadastro.html";
+            
+        }
     }
-
-    usuarios = JSON.parse(localStorage.getItem("usuarios") || "[]");
-
-    usuarios.push(usuario);
-    localStorage.setItem("usuarios", JSON.stringify(usuarios));
 }
-
 
 function mostraUsuario() {
+
     var arrayUsuarios = JSON.parse(localStorage.getItem("usuarios") || "[]");
-    var nomeUsuario = arrayUsuarios[arrayUsuarios.length - 1].nome;
-    var sobrenomeUsuario = arrayUsuarios[arrayUsuarios.length - 1].sobrenome;
-    document.getElementById("nomeUsuario").innerHTML = `${nomeUsuario} ${sobrenomeUsuario}`; 
-}
-
-function checaUsuario() {
-    var arrayUsuarios = JSON.parse(localStorage.getItem("usuarios") || "[]");
-
-}
-
-function x() {
-    for(i=0 ; i < JSON.parse(localStorage.getItem("usuarios") || "[]").length ; i++){
-        console.log(JSON.parse(localStorage.getItem("usuarios") || "[]")[i].email);
-    }
-
+    var nomeUsuario = arrayUsuarios[indexdoobjeto].nome;
+    var sobrenomeUsuario = arrayUsuarios[indexdoobjeto].sobrenome;
     
+
+      /*iterar por cada objeto da lista de usuarios
+        o objeto que tiver o email igual ao fornecido vai ser selecionado
+        pegar o nome e sobrenome do objeto selecionado*/
+
+    let objetoEncontrado; // variavel booleana para identificar em qual i em usuarios[i] foi encontrado o email igual
+
+    document.getElementById("nomeUsuario").innerHTML = `${nomeUsuario} ${sobrenomeUsuario}`;
+
 }
