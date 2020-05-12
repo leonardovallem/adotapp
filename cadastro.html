@@ -27,34 +27,34 @@
                 <div class="card card-signin my-5">
                     <div class="card-body">
                         <h5 class="card-title text-center">Criar conta</h5>
-                        <form class="form-signin" action="home.html">
-                        <div class="form-label-group">
-                            <input type="text" id="inputNome" class="form-control" placeholder="Nome" required autofocus>
-                            <label for="inputNome">Nome</label>
-                        </div>
-                        <div class="form-label-group">
-                            <input type="text" id="inputSobrenome" class="form-control" placeholder="Sobrenome" required autofocus>
-                            <label for="inputSobrenome">Sobrenome</label>
-                        </div>
+                        <form class="form-signin" onsubmit="teste()" action="home.html">
+                            <div class="form-label-group">
+                                <input type="text" id="inputNome" class="form-control" placeholder="Nome" required autofocus>
+                                <label for="inputNome">Nome</label>
+                            </div>
+                            <div class="form-label-group">
+                                <input type="text" id="inputSobrenome" class="form-control" placeholder="Sobrenome" required autofocus>
+                                <label for="inputSobrenome">Sobrenome</label>
+                            </div>
+                                
+                            <div class="form-label-group">
+                                <input type="text" id="inputEmailCadastro" class="form-control" placeholder="Endereço de email" required autofocus>
+                                <label for="inputEmailCadastro">Endereço de email</label>
+                            </div>
+                
+                            <div class="form-label-group">
+                                <input type="password" id="inputSenhaCadastro" class="form-control" placeholder="Senha" required>
+                                <label for="inputSenhaCadastro">Senha</label>
+                            </div>
+
+                            <div class="form-label-group">
+                                <input type="password" id="inputSenhaConfirma" class="form-control" placeholder="Confirme a senha" required>
+                                <label for="inputSenhaConfirma">Confirme a senha</label>
+                            </div>
+
+                            <button class="btn btn-lg btn-purple accent-5 btn-block text-uppercase" type="submit">Criar conta</button>
                             
-                        <div class="form-label-group">
-                            <input type="text" id="inputEmailCadastro" class="form-control" placeholder="Endereço de email" required autofocus>
-                            <label for="inputEmailCadastro">Endereço de email</label>
-                        </div>
-            
-                        <div class="form-label-group">
-                            <input type="password" id="inputSenhaCadastro" class="form-control" placeholder="Senha" required>
-                            <label for="inputSenhaCadastro">Senha</label>
-                        </div>
-
-                        <div class="form-label-group">
-                            <input type="password" id="inputSenhaConfirma" class="form-control" placeholder="Confirme a senha" required>
-                            <label for="inputSenhaConfirma">Confirme a senha</label>
-                        </div>
-
-                        <button onclick="adicionaUsuario()" class="btn btn-lg btn-purple accent-5 btn-block text-uppercase" type="submit">Criar conta</button>
-                        
-                        <hr class="my-4">
+                            <hr class="my-4">
                         </form>
                         <a href="login.html"><button class="btn btn-lg btn-purple accent-5 btn-block text-uppercase" type="submit" style="border-radius: 5rem;">Entrar</button></a>
                         
