@@ -58,6 +58,7 @@ function adicionaUsuario() { // tela de cadastro -> checa se o usuario já exist
 }
 
 function checaUsuario() {    // tela de login -> checa se o usuario já existe, se não: erro
+
     var usuarios = [];
     usuarios = JSON.parse(localStorage.getItem("usuarios") || "[]");
 
@@ -93,6 +94,7 @@ function checaUsuario() {    // tela de login -> checa se o usuario já existe, 
 
 
 function mostraUsuario() {
+
     var arrayUsuarios = JSON.parse(localStorage.getItem("usuarios") || "[]");
 /*
     if(document.referrer == "login.html"){
@@ -121,4 +123,39 @@ function mostraUsuario() {
 
     document.getElementById("nomeUsuario").innerHTML = `${nomeUsuario} ${sobrenomeUsuario}`; */
 
+    if(document.getElementById("nomeUsuario").innerHTML == "" ){
+        alert("Você precisa fazer login!");
+        // window.location.href = "login.html";
+    }
 }
+
+
+function validateForm() {
+    var name =  document.getElementById('name').value;
+    if (name == "") {
+        document.querySelector('.status').innerHTML = "O nome não pode ficar vazio";
+        return false;
+    }
+    var email =  document.getElementById('email').value;
+    if (email == "") {
+        document.querySelector('.status').innerHTML = "O email não pode ficar vazio";
+        return false;
+    } else {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if(!re.test(email)){
+            document.querySelector('.status').innerHTML = "Formato de email inválido";
+            return false;
+        }
+    }
+    var subject =  document.getElementById('subject').value;
+    if (subject == "") {
+        document.querySelector('.status').innerHTML = "Assunto não pode ficar vazio";
+        return false;
+    }
+    var message =  document.getElementById('message').value;
+    if (message == "") {
+        document.querySelector('.status').innerHTML = "Mensagem não pode ficar vazia";
+        return false;
+    }
+    document.querySelector('.status').innerHTML = "Enviando...";
+  }
