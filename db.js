@@ -57,12 +57,13 @@ function adicionaUsuario() { // tela de cadastro -> checa se o usuario já exist
     
 }
 
-function checaUsuario() {    // tela de login -> checa se o usuario já existe, se não: erro
+function checaUsuario() {    // tela de login -> checa se o usuario já existe, se não: manda para o cadastro
 
     var usuarios = [];
     usuarios = JSON.parse(localStorage.getItem("usuarios") || "[]");
 
     var emailParaLogin = document.getElementById("inputEmail").value;
+    var senhaParaLogin = document.getElementById("inputPassword").value;
 
 
     if(usuarios.length == 0){          // se não tiver nenhum usuario no localStorage não tem como ele ser cadastrado
@@ -76,14 +77,14 @@ function checaUsuario() {    // tela de login -> checa se o usuario já existe, 
             if(usuarios[i].email === emailParaLogin){
                 localStorage.setItem("indexDoUsuario", JSON.stringify(i));
                 jaFoiCadastrado = true; // se der verdadeiro ele automaticamente para esse script
-                document.getElementById('formLogin').action = "home.html";
+                if(usuarios[i].senha == senhaParaLogin) document.getElementById('formLogin').action = "home.html"; // se a senha informada for igual à existente no localstorage, login
+                else alert("Senha incorreta."); // senha fornecida não bate com a cadastrada no localstorage
                 
                 break;
             }
         }
 
     
-
         if(!jaFoiCadastrado){
             alert("Email não cadastrado.");
             document.getElementById('formLogin').action = "cadastro.html";  
