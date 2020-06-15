@@ -18,8 +18,9 @@ function adicionaUsuario() { // tela de cadastro -> checa se o usuario já exist
         localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
         localStorage.setItem("indexDoUsuario", JSON.stringify(usuarios.length - 1));
+        localStorage.setItem("emailLogado", JSON.stringify(usuario.email));
 
-        document.getElementById('formCadastro').action = "home.html";
+        document.getElementById('formCadastro').action = "processo.html";
         
         
         
@@ -49,8 +50,9 @@ function adicionaUsuario() { // tela de cadastro -> checa se o usuario já exist
             localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
             localStorage.setItem("indexDoUsuario", JSON.stringify(usuarios.length - 1));
+            localStorage.setItem("emailLogado", JSON.stringify(usuario.email));
 
-            document.getElementById('formCadastro').action = "home.html";            
+            document.getElementById('formCadastro').action = "processo.html";
         }
     }
 
@@ -77,7 +79,10 @@ function checaUsuario() {    // tela de login -> checa se o usuario já existe, 
             if(usuarios[i].email === emailParaLogin){
                 localStorage.setItem("indexDoUsuario", JSON.stringify(i));
                 jaFoiCadastrado = true; // se der verdadeiro ele automaticamente para esse script
-                if(usuarios[i].senha == senhaParaLogin) document.getElementById('formLogin').action = "home.html"; // se a senha informada for igual à existente no localstorage, login
+                if(usuarios[i].senha == senhaParaLogin){
+                    document.getElementById('formLogin').action = "home.html"; // se a senha informada for igual à existente no localstorage, login
+                    localStorage.setItem("emailLogado", JSON.stringify(emailParaLogin));
+                }
                 else alert("Senha incorreta."); // senha fornecida não bate com a cadastrada no localstorage
                 
                 break;
@@ -131,7 +136,7 @@ function mostraUsuario() {
 }
 
 
-function validateForm() {
+function validateForm() {  /* Sistema de enviar emails */
     var name =  document.getElementById('name').value;
     if (name == "") {
         document.querySelector('.status').innerHTML = "O nome não pode ficar vazio";
@@ -159,4 +164,4 @@ function validateForm() {
         return false;
     }
     document.querySelector('.status').innerHTML = "Enviando...";
-  }
+}

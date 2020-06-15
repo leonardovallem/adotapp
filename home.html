@@ -21,15 +21,17 @@
 
   <!-- Custom styles for this template-->
   <link href="estilos/sb-admin-2.min.css" rel="stylesheet">
-
-  <script src="db.js"></script>
+  
+    <script src="db.js"></script>
+    <script src="scripts/db_cadastro.js"></script>
   
   <script>
     window.onload = () => {
       mostraUsuario();
+      atualizaTabela();
     }
   </script>
-  
+
 </head>
 
 <body id="page-top">
@@ -188,13 +190,13 @@
                   </div>
                   <div class="mt-4 text-center small">
                     <span class="mr-2">
-                      <i class="fas fa-circle text-primary"></i> Restante
+                      <i class="fas fa-circle" style="color: #36b9cc;"></i> Restante
                     </span>
                     <span class="mr-2">
-                      <i class="fas fa-circle text-success"></i> Em andamento
+                      <i class="fas fa-circle" style="color: #1cc88a;"></i> Em andamento
                     </span>
                     <span class="mr-2">
-                      <i class="fas fa-circle text-info"></i> Concluído
+                      <i class="fas fa-circle" style="color: #e040fb;"></i> Concluído
                     </span>
                   </div>
                 </div>
@@ -208,21 +210,21 @@
                   <h6 class="m-0 font-weight-bold text-000" style="color: #e040fb;">Detalhes</h6>
                 </div>
                 <div class="card-body py-4">
-                  <h4 class="small font-weight-bold">Curso de preparação psicossocial<span class="float-right">70%</span></h4>
+                  <h4 class="small font-weight-bold">Aulas de capacitação parental<span class="float-right" id="progressoDetalhe4">Não realizado</span></h4>
                   <div class="progress mb-4">
-                    <div class="progress-bar bg-danger" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-danger" id="progresso4" role="progressbar" style="width: 1%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
-                  <h4 class="small font-weight-bold">Sentença judicial<span class="float-right">40%</span></h4>
+                  <h4 class="small font-weight-bold">Entrevista preliminar<span class="float-right" id="progressoDetalhe3">Não realizado</span></h4>
                   <div class="progress mb-4">
-                    <div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-warning" id="progresso3" role="progressbar" style="width: 1%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
-                  <h4 class="small font-weight-bold">Documentação entregue<span class="float-right">60%</span></h4>
+                  <h4 class="small font-weight-bold">Petição de inscrição para adoção<span class="float-right" id="progressoDetalhe2">Não realizado</span></h4>
                   <div class="progress mb-4">
-                    <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-info" id="progresso2" role="progressbar" style="width: 1%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
-                  <h4 class="small font-weight-bold">Petição de inscrição para adoção<span class="float-right">Completo!</span></h4>
+                  <h4 class="small font-weight-bold">Documentação ajuntada<span class="float-right" id="progressoDetalhe1">Não realizado</span></h4>
                   <div class="progress mb-4">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar" id="progresso1" role="progressbar" style="width: 1%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                   <h4 class="small font-weight-bold">Configuração da conta<span class="float-right">Completo!</span></h4>
                   <div class="progress">
