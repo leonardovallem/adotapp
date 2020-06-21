@@ -52,11 +52,13 @@
                                 <label for="inputSenhaConfirma">Confirme a senha</label>
                             </div>
 
-                            <button class="btn btn-lg btn-purple accent-5 btn-block text-uppercase" type="submit">Criar conta</button>
+                            <button class="btn btn-lg btn-green accent-5 btn-block text-uppercase" type="submit">Criar conta</button>
                             
                             <hr class="my-4">
                         </form>
-                        <a href="login.html"><button class="btn btn-lg btn-purple accent-5 btn-block text-uppercase" type="submit" style="border-radius: 5rem;">Entrar</button></a>
+                        
+                        <p style="text-align: center;"><small>Já tem uma conta?</small></p>
+                        <a href="login.html"><button class="btn btn-lg purple-gradient accent-5 btn-block text-uppercase" type="submit" style="border-radius: 5rem;">Entrar</button></a>
                         
                         </form>
                         
@@ -67,9 +69,44 @@
         </div>
     </div>
 
+    <div class="modal fade left" id="modalAjudaCadastro" tabindex="-1" role="dialog" aria-labelledby="modalAjudaCadastro" aria-hidden="true">
+        <div class="modal-dialog modal-side modal-top-left" role="document">
+
+            <div class="modal-content" style="border-radius: 30px;">
+                <div class="modal-header">
+                    <h4 class="modal-title w-100" id="myModalLabel" style="text-align: center;">Cadastro</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Para fazer cadastro, insira: 
+                    <ul>
+                        <li>seu nome</li>
+                        <li>seu sobrenome</li>
+                        <li>seu endereço de email</li>
+                        <li>sua senha</li>
+                        <li>a confirmação de sua senha</li>
+                    </ul>
+                    nos campos a seguir e clique em <strong class="green textoBotao">CRIAR CONTA</strong>. <br><br>
+                    
+                    Caso ainda você <strong>já possua uma conta</strong> no <em>Adotapp</em>, clique no botão <strong class="purple-gradient textoBotao">ENTRAR</strong>.
+                </div>
+                <div class="modal-footer" style="justify-content: center;">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" style="border-radius: 30px;">Entendi!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script type="text/javascript" src="node_modules/mdbootstrap/js/jquery.min.js"></script>
     <script type="text/javascript" src="node_modules/mdbootstrap/js/popper.min.js"></script>
     <script type="text/javascript" src="node_modules/mdbootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="node_modules/mdbootstrap/js/mdb.min.js"></script>
+    <script>
+        $('document').ready(function() {
+            $('#modalAjudaCadastro').modal('show');
+        });
+    </script>
 </body>
 </html>

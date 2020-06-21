@@ -39,10 +39,12 @@
                                 <label for="inputPassword">Senha</label>
                             </div>
 
-                            <button class="btn btn-lg btn-block text-uppercase btn-purple accent-5" type="submit">Entrar</button>
+                            <button class="btn btn-lg btn-block text-uppercase btn-green accent-2" type="submit">Entrar</button>
                             <hr class="my-4">
                         </form>
-                        <a href="cadastro.html"><button class="btn btn-lg btn-purple accent-5 btn-block text-uppercase" type="submit" style="border-radius: 5rem;">Cadastrar</button></a>
+                        
+                        <p style="text-align: center;"><small>Ainda não tem uma conta?</small></p>
+                        <a href="cadastro.html"><button class="btn btn-lg purple-gradient btn-block text-uppercase" type="submit" style="border-radius: 5rem;">Cadastrar</button></a>
                     </div>
                 </div>
             </div>
@@ -50,10 +52,42 @@
     </div>
 
 
+    <div class="modal fade left" id="modalAjudaLogin" tabindex="-1" role="dialog" aria-labelledby="modalAjudaLogin" aria-hidden="true">
+        <div class="modal-dialog modal-side modal-top-left" role="document">
+
+            <div class="modal-content" style="border-radius: 30px;">
+                <div class="modal-header">
+                    <h4 class="modal-title w-100" id="myModalLabel" style="text-align: center;">Login</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Para fazer login, insira: 
+                    <ul>
+                        <li>seu endereço de email</li>
+                        <li>sua senha</li>
+                    </ul>
+                    nos campos a seguir e clique em <strong class="green textoBotao">ENTRAR</strong>. <br><br>
+                    
+                    Caso ainda não possua uma conta no <em>Adotapp</em>, clique no botão <strong class="purple-gradient textoBotao">CADASTRAR</strong>.
+                </div>
+                <div class="modal-footer" style="justify-content: center;">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" style="border-radius: 30px;">Entendi!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script type="text/javascript" src="node_modules/mdbootstrap/js/jquery.min.js"></script>
     <script type="text/javascript" src="node_modules/mdbootstrap/js/popper.min.js"></script>
     <script type="text/javascript" src="node_modules/mdbootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="node_modules/mdbootstrap/js/mdb.min.js"></script>
+    <script>
+        $('document').ready(function() {
+            $('#modalAjudaLogin').modal('show');
+        });
+    </script>
 </body>
 </html>
 
