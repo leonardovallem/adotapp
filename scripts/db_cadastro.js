@@ -79,7 +79,20 @@ function atualizaTabela() {
         }
         else{
             document.getElementById("progresso" + (i+1)).style.width = "1%"
-            document.getElementById("progressoDetalhe" + (i+1)).innerText = "Não realizado";
+            // document.getElementById("progressoDetalhe" + (i+1)).innerHTML = ``;
         }
     }
+}
+
+function realizado(i) {
+    var x = JSON.parse(localStorage.getItem("indexDoUsuario"));
+    var usuarios = [];
+    usuarios = JSON.parse(localStorage.getItem("usuarios") || "[]");
+
+    usuarios[x].progresso[i-1] = true;
+
+    document.getElementById("progresso" + i).style.width = "100%";
+    document.getElementById("progressoDetalhe" + i).innerText = "Completo!";
+
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
 }

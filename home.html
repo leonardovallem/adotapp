@@ -19,11 +19,12 @@
   <link rel="stylesheet" href="node_modules/mdbootstrap/css/mdb.min.css">
   <link rel="stylesheet" href="node_modules/mdbootstrap/css/style.css">
 
+
   <!-- Custom styles for this template-->
   <link href="estilos/sb-admin-2.min.css" rel="stylesheet">
   
-    <script src="db.js"></script>
-    <script src="scripts/db_cadastro.js"></script>
+  <script src="db.js"></script>
+  <script src="scripts/db_cadastro.js"></script>
   
   <script>
     window.onload = () => {
@@ -31,7 +32,6 @@
       atualizaTabela();
     }
   </script>
-
 </head>
 
 <body id="page-top">
@@ -210,19 +210,19 @@
                   <h6 class="m-0 font-weight-bold text-000" style="color: #e040fb;">Detalhes</h6>
                 </div>
                 <div class="card-body py-4">
-                  <h4 class="small font-weight-bold">Aulas de capacitação parental<span class="float-right" id="progressoDetalhe4">Não realizado</span></h4>
+                  <h4 class="small font-weight-bold">Aulas de capacitação parental<span class="float-right" id="progressoDetalhe4"><button type="button" class="btn btn-outline-danger waves-effect" data-toggle="modal" data-target="#modalAulasCapacitacao" style="border-radius: 30px;">Já realizou?</button></span></h4>
                   <div class="progress mb-4">
                     <div class="progress-bar bg-danger" id="progresso4" role="progressbar" style="width: 1%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
-                  <h4 class="small font-weight-bold">Entrevista preliminar<span class="float-right" id="progressoDetalhe3">Não realizado</span></h4>
+                  <h4 class="small font-weight-bold">Entrevista preliminar<span class="float-right" id="progressoDetalhe3"><button type="button" class="btn btn-outline-warning waves-effect" data-toggle="modal" data-target="#modalEntrevista" style="border-radius: 30px;">Já realizou?</button></span></h4>
                   <div class="progress mb-4">
                     <div class="progress-bar bg-warning" id="progresso3" role="progressbar" style="width: 1%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
-                  <h4 class="small font-weight-bold">Petição de inscrição para adoção<span class="float-right" id="progressoDetalhe2">Não realizado</span></h4>
+                  <h4 class="small font-weight-bold">Petição de inscrição para adoção<span class="float-right" id="progressoDetalhe2"><button type="button" class="btn btn-outline-info waves-effect" data-toggle="modal" data-target="#modalPeticao" style="border-radius: 30px;">Já realizou?</button></span></h4>
                   <div class="progress mb-4">
                     <div class="progress-bar bg-info" id="progresso2" role="progressbar" style="width: 1%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
-                  <h4 class="small font-weight-bold">Documentação ajuntada<span class="float-right" id="progressoDetalhe1">Não realizado</span></h4>
+                  <h4 class="small font-weight-bold">Documentação ajuntada<span class="float-right" id="progressoDetalhe1"><button type="button" class="btn btn-outline-primary waves-effect" data-toggle="modal" data-target="#modalDocumentacao" style="border-radius: 30px;">Já realizou?</button></span></h4>
                   <div class="progress mb-4">
                     <div class="progress-bar" id="progresso1" role="progressbar" style="width: 1%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
@@ -293,6 +293,117 @@
   </div>
   <!--Modal: modalConfirmDelete-->
 
+
+  <!-- Modal Aulas de Capacitação -->
+  <div class="modal fade right" id="modalAulasCapacitacao" tabindex="-1" role="dialog" aria-labelledby="modalAulasCapacitacao" aria-hidden="true">
+    <!-- Add class .modal-full-height and then add class .modal-right (or other classes from list above) to set a position to the modal -->
+    <div class="modal-dialog modal-full-height modal-right" role="document">
+
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title w-100" id="myModalLabel">Você confirma que já realizou as <strong>Aulas de Capacitação Parental</strong>?</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Você já completou o curso de capacitação - em que são explicados os aspectos jurídicos da adoção, a gestação do filho adotivo, a espera e os medos que envolvem o processo?
+        </div>
+        <div class="modal-footer justify-content-center">
+          <button type="button" class="btn btn-outline-warning" data-dismiss="modal">Ainda não</button>
+          <button type="button" class="btn btn-outline-default" data-dismiss="modal" onclick="realizado(4)" style="width: 100px;">Já!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Full Height Modal Right -->
+
+  <!-- Modal Entrevista -->
+  <div class="modal fade right" id="modalEntrevista" tabindex="-1" role="dialog" aria-labelledby="modalEntrevista" aria-hidden="true">
+    <!-- Add class .modal-full-height and then add class .modal-right (or other classes from list above) to set a position to the modal -->
+    <div class="modal-dialog modal-full-height modal-right" role="document">
+
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title w-100" id="myModalLabel">Você confirma que já realizou a <strong>Entrevista Preliminar</strong>?</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        Você já participou <strong>e</strong> foi aprovado na entrevista preliminar - dividida em avaliações sociais e emocionais, ministradas por assistentes sociais e psicólogos?
+        </div>
+        <div class="modal-footer justify-content-center">
+          <button type="button" class="btn btn-outline-warning" data-dismiss="modal">Ainda não</button>
+          <button type="button" class="btn btn-outline-default" data-dismiss="modal" onclick="realizado(3)" style="width: 100px;">Já!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Full Height Modal Right -->
+
+  <!-- Modal Petição -->
+  <div class="modal fade right" id="modalPeticao" tabindex="-1" role="dialog" aria-labelledby="modalPeticao" aria-hidden="true">
+    <!-- Add class .modal-full-height and then add class .modal-right (or other classes from list above) to set a position to the modal -->
+    <div class="modal-dialog modal-full-height modal-right" role="document">
+
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title w-100" id="myModalLabel">Você confirma que já realizou a sua <strong>Petição</strong>?</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        Você já realizou uma petição de inscrição para adoção (no cartório da Vara de Infância)?
+        </div>
+        <div class="modal-footer justify-content-center">
+          <button type="button" class="btn btn-outline-warning" data-dismiss="modal">Ainda não</button>
+          <button type="button" class="btn btn-outline-default" data-dismiss="modal" onclick="realizado(2)" style="width: 100px;">Já!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Full Height Modal Right -->
+
+  <!-- Modal Documentação -->
+  <div class="modal fade right" id="modalDocumentacao" tabindex="-1" role="dialog" aria-labelledby="modalDocumentacao" aria-hidden="true">
+    <!-- Add class .modal-full-height and then add class .modal-right (or other classes from list above) to set a position to the modal -->
+    <div class="modal-dialog modal-full-height modal-right" role="document">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title w-100" id="myModalLabel">Você confirma que obteve toda a <strong>Documentação Necesária</strong>?</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Você já tem todos os seguintes documentos guardados?
+          <ul>
+            <li>Cópias autenticadas: da Certidão de nascimento ou casamento, ou declaração relativa ao período de união estável</li>
+            <li>Cópias da Cédula de identidade e da Inscrição no Cadastro de Pessoas Físicas (CPF)</li>
+            <li>Comprovante de renda e de residência</li>
+            <li>Atestados de sanidade física e mental</li>
+            <li>Certidão negativa de distribuição cível</li>
+            <li>Certidão de antecedentes criminal</li>
+          </ul>
+
+          <br><br>
+
+          Você pode saber mais sobre isso <a href="documentacao.html">aqui</a>.
+        </div>
+        <div class="modal-footer justify-content-center">
+          <button type="button" class="btn btn-outline-warning" data-dismiss="modal">Ainda não</button>
+          <button type="button" class="btn btn-outline-default" data-dismiss="modal" onclick="realizado(1)" style="width: 100px;">Já!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Full Height Modal Right -->
 
   <!-- Bootstrap core JavaScript-->
   <script src="recursos/jquery/jquery.min.js"></script>

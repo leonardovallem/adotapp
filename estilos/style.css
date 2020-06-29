@@ -10,6 +10,10 @@ body {
     transition: opacity .7s;
 }
 
+.rounded {
+    border-radius: 30px !important;
+}
+
 .textoBotao{
     border-radius: 30px;
     padding: 3px 6px;
