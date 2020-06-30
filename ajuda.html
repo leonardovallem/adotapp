@@ -189,7 +189,7 @@
               
                     <!--Grid column-->
                     <div class="col-md-9 mb-md-0 mb-5">
-                      <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+                      <form id="contact-form" name="contact-form" action="mail.php" method="POST" onsubmit="return validateForm()">
           
                         <!--Grid row-->
                         <div class="row">
@@ -244,11 +244,11 @@
                       </form>
             
                       <div class="text-center text-md-left">
-                        <button class="btn btn-pink btn-icon rounded-circle" onclick="validateForm()" id="sendMail" type="button" style="color: white; background-color: #e040fb; padding: 15px 20px;">
+                        <button class="btn btn-pink btn-icon rounded-circle" onclick="validateForm()" id="sendMail" type="submit" style="color: white; background-color: #e040fb; padding: 15px 20px;">
                           <i class="fas fa-paper-plane"></i>
                         </button>
                       </div>
-                      <div class="status"></div>
+                      <div class="status" id="status"></div>
                     </div>
                         <!--Grid column-->
                 
