@@ -11,11 +11,6 @@ if ($name === ''){
 if ($email === ''){
   print json_encode(array('message' => 'Email não pode ficar vazio.', 'code' => 0));
   exit();
-} else {
-  if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
-  print json_encode(array('message' => 'Formato de email inválido.', 'code' => 0));
-  exit();
-  }
 }
 if ($subject === ''){
   print json_encode(array('message' => 'Assunto não pode ficar vazio.', 'code' => 0));
