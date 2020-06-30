@@ -189,7 +189,7 @@
               
                     <!--Grid column-->
                     <div class="col-md-9 mb-md-0 mb-5">
-                      <form id="contact-form" name="contact-form" action="mail.php" method="POST" onsubmit="return validateForm()">
+                      <form id="contact-form" name="contact-form" action="https://formspree.io/mknqvago" method="POST" >
           
                         <!--Grid row-->
                         <div class="row">
@@ -251,6 +251,8 @@
                       <div class="status" id="status"></div>
                     </div>
                         <!--Grid column-->
+
+                       
                 
                     <!--Grid column-->
                     <div class="col-md-3 text-center">
@@ -355,6 +357,54 @@
   <script type="text/javascript" src="node_modules/mdbootstrap/js/mdb.min.js"></script>
 
   <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", function() {
+  
+      // get the form elements defined in your form HTML above
+      
+      var form = document.getElementById("contact-form");
+      var button = document.getElementById("sendMail");
+      var status = document.getElementById("status");
+  
+      // Success and Error functions for after the form is submitted
+      
+      function success() {
+        form.reset();
+        button.style = "display: none ";
+        status.innerHTML = "Thanks!";
+      }
+  
+      function error() {
+        status.innerHTML = "Oops! There was a problem.";
+      }
+  
+      // handle the form submission event
+  
+      form.addEventListener("submit", function(ev) {
+        ev.preventDefault();
+        var data = new FormData(form);
+        ajax(form.method, form.action, data, success, error);
+      });
+    });
+    
+    // helper function for sending an AJAX request
+  
+    function ajax(method, url, data, success, error) {
+      var xhr = new XMLHttpRequest();
+      xhr.open(method, url);
+      xhr.setRequestHeader("Accept", "application/json");
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState !== XMLHttpRequest.DONE) return;
+        if (xhr.status === 200) {
+          success(xhr.response, xhr.responseType);
+        } else {
+          error(xhr.status, xhr.response, xhr.responseType);
+        }
+      };
+      xhr.send(data);
+    }
+  </script>
 </body>
 
 </html>

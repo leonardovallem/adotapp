@@ -1,3 +1,5 @@
+const API_KEY = "0895DD360598CCB0E89AA58C764AD99118EE0C4E300F214EF52C32689967B2F01E735568241A55FBF1B85B1696029C2C";
+
 function validateForm() {
     var name =  document.getElementById('name').value;
     if (name == "") {
@@ -29,6 +31,9 @@ function validateForm() {
 
     document.getElementById('status').innerHTML = "Sending...";
 
+    document.getElementById('contact-form').submit();
+
+    /*
     formData = {
         'name': $('input[name=name]').val(),
         'email': $('input[name=email]').val(),
@@ -49,5 +54,5 @@ function validateForm() {
         {
             $('#status').text(jqXHR);
         }
-    });
+    });*/
 }
