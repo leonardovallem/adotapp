@@ -29,6 +29,7 @@
     }
   </script>
 
+  <script src="scripts/email.js"></script>
 </head>
 
 <body id="page-top">
@@ -188,7 +189,7 @@
               
                     <!--Grid column-->
                     <div class="col-md-9 mb-md-0 mb-5">
-                      <form id="contact-form" name="contact-form" action="mailto:contato@adotapp.com" method="POST">
+                      <form id="contact-form" name="contact-form" action="mail.php" method="POST">
           
                         <!--Grid row-->
                         <div class="row">
@@ -243,7 +244,7 @@
                       </form>
             
                       <div class="text-center text-md-left">
-                        <button class="btn btn-pink btn-icon rounded-circle" onclick="validateForm();" type="button" style="color: white; background-color: #e040fb; padding: 15px 20px;">
+                        <button class="btn btn-pink btn-icon rounded-circle" onclick="validateForm()" id="sendMail" type="button" style="color: white; background-color: #e040fb; padding: 15px 20px;">
                           <i class="fas fa-paper-plane"></i>
                         </button>
                       </div>
@@ -353,6 +354,7 @@
   <script type="text/javascript" src="node_modules/mdbootstrap/js/popper.min.js"></script>
   <script type="text/javascript" src="node_modules/mdbootstrap/js/mdb.min.js"></script>
 
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
 </body>
 
 </html>
