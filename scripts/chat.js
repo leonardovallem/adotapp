@@ -1,23 +1,4 @@
-
-$(document).ready(function() {
-
-    $('.faq_question').click(function() {
-
-        if ($(this).parent().is('.open')) {
-            $(this).closest('.faq').find('.faq_answer_container').slideUp();
-        } else {
-            $('.faq_answer_container').slideUp();
-            $('.faq').removeClass('open');
-            $(this).closest('.faq').find('.faq_answer_container').slideDown();
-            $(this).closest('.faq').addClass('open');
-        }
-
-    });
-});
-
-
-
-let pergunta ={
+let pergunta = {
     "perguntas":[
         {
         "id": 1,
@@ -34,7 +15,7 @@ let pergunta ={
         "pergunta": "O processo de adoção custa caro?",
         "resposta": "Não custa nada. Tanto o processo de habilitação à adoção quanto a adoção propriamente dita são isentos de custas judiciais. Além disso, não é preciso contratar advogado e os requerimentos podem ser formulados diretamente em cartório pelos interessados."
         }
-]
+    ]
 };
 
 onload = () => {

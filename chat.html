@@ -365,6 +365,24 @@
     <script type="text/javascript" src="node_modules/mdbootstrap/js/popper.min.js"></script>
     <script type="text/javascript" src="node_modules/mdbootstrap/js/mdb.min.js"></script>
 
+    <script>
+        $(document).ready(function() {
+
+            $('.faq_question').click(function() {
+
+                if ($(this).parent().is('.open')) {
+                    $(this).closest('.faq').find('.faq_answer_container').slideUp();
+                } else {
+                    $('.faq_answer_container').slideUp();
+                    $('.faq').removeClass('open');
+                    $(this).closest('.faq').find('.faq_answer_container').slideDown();
+                    $(this).closest('.faq').addClass('open');
+                }
+
+            });
+        });
+    </script>
+
 </body>
 
 </html>
