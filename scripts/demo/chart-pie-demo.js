@@ -7,7 +7,7 @@ var ctx = document.getElementById("myPieChart");
 var myPieChart = new Chart(ctx, {
   type: 'doughnut',
   data: {
-    labels: ["Restante", "Em andamento", "Concluído"],
+    labels: ["Preparação para a adoção", "Aprovação da petição", "Realização da petição"],
     datasets: [{
       data: [75, 20, 15],
       backgroundColor: ['#36b9cc', '#1cc88a', '#e040fb'],
@@ -24,7 +24,7 @@ var myPieChart = new Chart(ctx, {
       borderWidth: 1,
       xPadding: 15,
       yPadding: 15,
-      displayColors: false,
+      displayColors: true,
       caretPadding: 10,
     },
     legend: {

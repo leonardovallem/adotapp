@@ -187,7 +187,9 @@
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-000" style="color: #e040fb;">Andamento</h6>
+                  <h6 class="m-0 font-weight-bold text-000" style="color: #e040fb;">Processo
+                    <a href="#" data-toggle="tooltip" title="Representação das partes do processo em relação ao todo"><i class="fas fa-info-circle grey-text"></i></a>
+                  </h6>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
@@ -196,13 +198,13 @@
                   </div>
                   <div class="mt-4 text-center small">
                     <span class="mr-2">
-                      <i class="fas fa-circle" style="color: #36b9cc;"></i> Restante
+                      <i class="fas fa-circle" style="color: #36b9cc;"></i> Preparação
                     </span>
                     <span class="mr-2">
-                      <i class="fas fa-circle" style="color: #1cc88a;"></i> Em andamento
+                      <i class="fas fa-circle" style="color: #1cc88a;"></i> Aprovação
                     </span>
                     <span class="mr-2">
-                      <i class="fas fa-circle" style="color: #e040fb;"></i> Concluído
+                      <i class="fas fa-circle" style="color: #e040fb;"></i> Petição
                     </span>
                   </div>
                 </div>
@@ -213,7 +215,11 @@
               <!-- Project Card Example -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-000" style="color: #e040fb;">Detalhes</h6>
+                  <h6 class="m-0 font-weight-bold text-000" style="color: #e040fb;">Detalhes
+                    <a href="#" data-toggle="tooltip" title='Aqui você pode ver o seu progresso no procedimento de adoção. Caso você tenha completado alguma fase, clique em "Já realizou?" para confirmar sua conclusão.'>
+                      <i class="fas fa-info-circle grey-text"></i>
+                    </a>
+                  </h6>
                 </div>
                 <div class="card-body py-4">
                   <h4 class="small font-weight-bold">Aulas de capacitação parental<span class="float-right" id="progressoDetalhe4"><button type="button" class="btn btn-outline-danger waves-effect" data-toggle="modal" data-target="#modalAulasCapacitacao" style="border-radius: 30px;">Já realizou?</button></span></h4>
@@ -269,6 +275,49 @@
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
+
+
+
+  <!--Modal: instruções-->
+  <div class="modal fade left" id="tutStep1" tabindex="-1" role="dialog" aria-labelledby="tutStep1"
+    aria-hidden="true" data-backdrop="true">
+    <div class="modal-dialog modal-side modal-top-left modal-notify" role="document">
+      <!--Content-->
+      <div class="modal-content">
+        <!--Header-->
+        <div class="modal-header purple-gradient">
+          <p class="heading">Esse é o seu painel inicial, <br>
+            <strong>feito especialmente para você.</strong>
+          </p>
+
+        </div>
+
+        <!--Body-->
+        <div class="modal-body">
+
+          <div class="row">
+            <div class="col-3">
+              <p></p>
+              <p class="text-center">
+                <i class="fas fa-child fa-4x pink-text"></i>
+              </p>
+            </div>
+
+            <div class="col-9">
+              <p>Aqui você terá acesso a diversas funcionalidades para te ajudar com o processo de adoção.</p>
+            </div>
+          </div>
+        </div>
+
+        <!--Footer-->
+        <div class="modal-footer flex-center">
+          <a data-dismiss="modal" class="btn purple-gradient"> OK <i class="fas fa-check ml-1 light-green-text"></i> </a>
+        </div>
+      </div>
+      <!--/.Content-->
+    </div>
+  </div>
+  <!--Modal: instruções-->
 
 
   <!--Modal: modalConfirmDelete-->
@@ -436,6 +485,25 @@
 
   <script type="text/javascript" src="node_modules/mdbootstrap/js/popper.min.js"></script>
   <script type="text/javascript" src="node_modules/mdbootstrap/js/mdb.min.js"></script>
+
+  <script>
+    $('document').ready(function() {
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      });
+
+      let jaViuModal = JSON.parse(sessionStorage.getItem("jaViuModal"))
+      console.log("Modal:", jaViuModal);
+      
+      if(!jaViuModal){
+        $('#tutStep1').modal('show');
+        $("#tutStep1").on('hide.bs.modal', function(){
+          jaViuModal = true
+          sessionStorage.setItem("jaViuModal", JSON.stringify(jaViuModal))
+        });
+      }
+    });
+  </script>
 
 </body>
 
